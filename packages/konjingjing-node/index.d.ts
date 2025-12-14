@@ -24,9 +24,3 @@ export interface IdMeaning {
  * Returns null if the ID format is invalid.
  */
 export declare function getIdMeaning(id: string): IdMeaning | null
-
-/** Alias for verifyId (cross-language consistency) */
-export declare function verify_id(id: string): boolean
-
-/** Alias for getIdMeaning (cross-language consistency) */
-export declare function get_id_meaning(id: string): IdMeaning | null

@@ -67,6 +67,10 @@ mise run test:node     # Run Node tests
 2. Calculate weighted checksum: `sum(digit[i] * (13 - i))` for i in 0..12
 3. Verify: `(11 - sum % 11) % 10 == digit[12]`
 
+## Support
+
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20me%20☕-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/ninyawee)
+
 ## License
 
 ISC

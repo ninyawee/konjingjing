@@ -1,6 +1,6 @@
 # konjingjing
 
-Thai Citizen ID validation library available in Rust, Python, and Node.js.
+Thai Citizen ID validation library available in Rust, Python, Node.js, and WebAssembly.
 
 The library name 'kon-jing-jing' (คนจริงจริง) means 'real person' in Thai.
 
@@ -11,6 +11,18 @@ The library name 'kon-jing-jing' (คนจริงจริง) means 'real pe
 | Rust | [packages/konjingjing](./packages/konjingjing) | `cargo add konjingjing` |
 | Python | [packages/konjingjing-python](./packages/konjingjing-python) | `pip install konjingjing` |
 | Node.js | [packages/konjingjing-node](./packages/konjingjing-node) | `npm install konjingjing` |
+| WASM | [packages/konjingjing-wasm](./packages/konjingjing-wasm) | `npm install konjingjing-wasm` |
+
+### Node.js vs WASM: Which to use?
+
+| Use Case | Package | Why |
+|----------|---------|-----|
+| **Node.js / Bun / Deno** | `konjingjing` | Native binding, fastest performance |
+| **Browser** | `konjingjing-wasm` | Runs in browser, no server needed |
+| **Edge / Serverless** | `konjingjing-wasm` | Portable, no native dependencies |
+| **Cloudflare Workers** | `konjingjing-wasm` | WASM supported, native bindings not |
+
+> **TL;DR**: Use `konjingjing` for server-side Node.js. Use `konjingjing-wasm` for browsers and edge runtimes.
 
 ## API
 

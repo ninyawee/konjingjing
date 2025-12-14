@@ -1,0 +1,17 @@
+[package]
+name = "konjingjing-python"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+edition = "2021"
+description = "Python bindings for konjingjing Thai Citizen ID validation"
+publish = false
+
+[lib]
+name = "konjingjing"
+crate-type = ["cdylib"]
+
+[dependencies]
+konjingjing = { path = "../konjingjing" }
+pyo3 = { version = "0.23", features = ["extension-module", "abi3-py39"] }

@@ -1,0 +1,38 @@
+{
+  "name": "konjingjing",
+  "version": "0.2.0",
+  "description": "Thai Citizen ID validation library (Rust-powered)",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "konjingjing",
+    "triples": {}
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.18.0",
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "test": "bun test"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ninyawee/konjingjing.git",
+    "directory": "packages/konjingjing-node"
+  },
+  "keywords": [
+    "thai",
+    "validation",
+    "citizen-id",
+    "thailand",
+    "napi-rs"
+  ],
+  "author": "Nutchanon Ninyawee <me@nutchanon.org>"
+}

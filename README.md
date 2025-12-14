@@ -1,31 +1,42 @@
 # konjingjing
-A hyper-fast Python module for validating Thai Citizen Card ID written in Rust.
 
-The library name, 'kon-jing-jing' (คนจริงจริง) means 'real person' in Thai.
+Thai Citizen ID validation library available in Rust, Python, and Node.js.
 
-## Get Started
+The library name 'kon-jing-jing' (คนจริงจริง) means 'real person' in Thai.
+
+## Packages
+
+| Language | Package | Install |
+|----------|---------|---------|
+| Rust | [packages/konjingjing](./packages/konjingjing) | `cargo add konjingjing` |
+| Python | [packages/konjingjing-python](./packages/konjingjing-python) | `pip install konjingjing` |
+| Node.js | [packages/konjingjing-node](./packages/konjingjing-node) | `npm install konjingjing` |
+
+## API
+
+All packages export a `verify_id` function:
+
+```
+verify_id(id: string) -> boolean
+```
+
+## Development
+
+Uses [mise](https://mise.jdx.dev/) for task running.
+
 ```bash
-$ pip install konjingjing
+mise run test          # Run all tests
+mise run test:rust     # Run Rust tests
+mise run test:python   # Run Python tests
+mise run test:node     # Run Node tests
 ```
 
-```python
-from konjingjing import verify_id
+## Algorithm
 
-assert verify_id('1112034563562') # true
-assert verify_id('1112034563563') == False # false, fail checksum
-assert verify_id('11120345635') == False # false digit is less than 13
-assert verify_id('1112034563s62') == False # false mix with alpha
-```
+1. Validate input is exactly 13 digits
+2. Calculate weighted checksum: `sum(digit[i] * (13 - i))` for i in 0..12
+3. Verify: `(11 - sum % 11) % 10 == digit[12]`
 
-## Notes 😋
-This is my first python library written in rust. This is another weekend project. 
+## License
 
-![](https://i.imgflip.com/4p243t.jpg)
-
-
-### Idea-Fork from
-1. [one in npm](https://github.com/jukbot/thai-citizen-id-validator)
-
-### Sensei And Inspiration
-1. https://www.youtube.com/watch?v=D9r__qxtRMQ
-2. https://github.com/mre/hyperjson
+ISC

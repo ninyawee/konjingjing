@@ -1,0 +1,49 @@
+[tools]
+rust = "latest"
+python = "3.12"
+bun = "latest"
+uv = "latest"
+
+[tasks.test]
+description = "Run all tests"
+depends = ["test:rust", "test:python", "test:node"]
+
+[tasks."test:rust"]
+description = "Run Rust tests"
+run = "cargo test"
+
+[tasks."test:python"]
+description = "Run Python tests"
+dir = "packages/konjingjing-python"
+run = "uv run --with maturin maturin develop && uv run --with pytest pytest"
+
+[tasks."test:node"]
+description = "Run Node tests"
+dir = "packages/konjingjing-node"
+run = "bun install && bun run build && bun test"
+
+[tasks.build]
+description = "Build all packages"
+depends = ["build:rust", "build:python", "build:node"]
+
+[tasks."build:rust"]
+description = "Build Rust crate"
+run = "cargo build --release"
+
+[tasks."build:python"]
+description = "Build Python package"
+dir = "packages/konjingjing-python"
+run = "uv run --with maturin maturin build --release"
+
+[tasks."build:node"]
+description = "Build Node package"
+dir = "packages/konjingjing-node"
+run = "bun install && bun run build"
+
+[tasks.lint]
+description = "Lint Rust code"
+run = "cargo clippy"
+
+[tasks.fmt]
+description = "Format Rust code"
+run = "cargo fmt"

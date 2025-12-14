@@ -1,0 +1,20 @@
+[package]
+name = "konjingjing-node"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+edition = "2021"
+description = "Node.js bindings for konjingjing Thai Citizen ID validation"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+konjingjing = { path = "../konjingjing" }
+napi = "2"
+napi-derive = "2"
+
+[build-dependencies]
+napi-build = "2"

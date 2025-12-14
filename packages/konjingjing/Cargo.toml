@@ -4,6 +4,7 @@ version.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
+documentation.workspace = true
 edition = "2021"
 description = "Thai Citizen ID validation library"
 keywords = ["thai", "validation", "citizen-id", "thailand"]

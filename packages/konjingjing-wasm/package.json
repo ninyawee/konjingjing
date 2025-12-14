@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Thai Citizen ID validation library - WebAssembly build for browsers",
   "license": "ISC",
+  "homepage": "https://ninyawee.github.io/konjingjing/",
   "repository": {
     "type": "git",
     "url": "https://github.com/ninyawee/konjingjing.git",

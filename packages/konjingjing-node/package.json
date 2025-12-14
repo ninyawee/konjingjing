@@ -9,6 +9,7 @@
     "triples": {}
   },
   "license": "ISC",
+  "homepage": "https://ninyawee.github.io/konjingjing/",
   "devDependencies": {
     "@napi-rs/cli": "^2.18.0",
     "@types/bun": "latest"

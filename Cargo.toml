@@ -12,3 +12,4 @@ version = "1.0.0"
 authors = ["Nutchanon Ninyawee <me@nutchanon.org>"]
 license = "ISC"
 repository = "https://github.com/ninyawee/konjingjing"
+documentation = "https://ninyawee.github.io/konjingjing/"

@@ -4,6 +4,8 @@ Thai Citizen ID validation library available in Rust, Python, Node.js, and WebAs
 
 The library name 'kon-jing-jing' (คนจริงจริง) means 'real person' in Thai.
 
+📖 **[Documentation](https://ninyawee.github.io/konjingjing/)**
+
 ## Packages
 
 | Language | Package | Install |

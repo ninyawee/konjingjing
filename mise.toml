@@ -6,7 +6,7 @@ uv = "latest"
 
 [tasks.test]
 description = "Run all tests"
-depends = ["test:rust", "test:python", "test:node"]
+depends = ["test:rust", "test:python", "test:node", "test:wasm"]
 
 [tasks."test:rust"]
 description = "Run Rust tests"
@@ -24,7 +24,7 @@ run = "bun install && bun run build && bun test"
 
 [tasks.build]
 description = "Build all packages"
-depends = ["build:rust", "build:python", "build:node"]
+depends = ["build:rust", "build:python", "build:node", "build:wasm"]
 
 [tasks."build:rust"]
 description = "Build Rust crate"
@@ -40,6 +40,16 @@ description = "Build Node package"
 dir = "packages/konjingjing-node"
 run = "bun install && bun run build"
 
+[tasks."build:wasm"]
+description = "Build WASM package"
+dir = "packages/konjingjing-wasm"
+run = "wasm-pack build --target web --release"
+
+[tasks."test:wasm"]
+description = "Run WASM tests"
+dir = "packages/konjingjing-wasm"
+run = "wasm-pack test --node"
+
 [tasks.lint]
 description = "Lint Rust code"
 run = "cargo clippy"
@@ -47,3 +57,11 @@ run = "cargo clippy"
 [tasks.fmt]
 description = "Format Rust code"
 run = "cargo fmt"
+
+[tasks."docs:serve"]
+description = "Serve documentation locally"
+run = "uv run --with mkdocs-material mkdocs serve"
+
+[tasks."docs:build"]
+description = "Build documentation"
+run = "uv run --with mkdocs-material mkdocs build"

@@ -1,6 +1,7 @@
 //! Province data for Thai National ID.
 
 /// Province information
+#[derive(Debug)]
 pub struct Province {
     pub code: u8,
     pub name_th: &'static str,

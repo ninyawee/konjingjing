@@ -34,3 +34,4 @@ bun.lockb
 
 # mise
 .mise.local.toml
+site/

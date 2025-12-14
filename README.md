@@ -14,11 +14,29 @@ The library name 'kon-jing-jing' (คนจริงจริง) means 'real pe
 
 ## API
 
-All packages export a `verify_id` function:
+All packages export these functions:
 
-```
-verify_id(id: string) -> boolean
-```
+### `verify_id(id: string) -> boolean`
+
+Validates a Thai National ID checksum.
+
+### `get_id_meaning(id: string) -> IdMeaning | null`
+
+Extracts meaning from a Thai National ID:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `person_type_code` | `number` | Person type (1-8) |
+| `person_type_description` | `string` | Thai description |
+| `person_type_description_en` | `string` | English description |
+| `province_code` | `number?` | Province code (10-96) |
+| `province_name_th` | `string?` | Thai province name |
+| `province_name_en` | `string?` | English province name |
+| `amphoe_code` | `number?` | District code |
+| `amphoe_name` | `string?` | District name (Thai) |
+| `is_valid` | `boolean` | Checksum validity |
+
+Returns `null` if the ID format is invalid (not 13 digits).
 
 ## Development
 

@@ -1,6 +1,7 @@
 //! Amphoe (district) data for Thai National ID.
 
 /// Amphoe information
+#[derive(Debug)]
 pub struct Amphoe {
     pub code: u16,
     pub name_th: &'static str,

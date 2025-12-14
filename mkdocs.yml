@@ -1,0 +1,48 @@
+site_name: Konjingjing
+site_description: Thai Citizen ID validation library
+site_url: https://ninyawee.github.io/konjingjing
+repo_url: https://github.com/ninyawee/konjingjing
+repo_name: ninyawee/konjingjing
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.expand
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference:
+    - Rust: api/rust.md
+    - Python: api/python.md
+    - Node.js: api/node.md
+    - Browser (WASM): api/wasm.md
+  - Algorithm: algorithm.md
+  - Data Reference:
+    - Provinces: data/provinces.md
+    - Person Types: data/person-types.md

@@ -1,0 +1,27 @@
+{
+  "name": "konjingjing-wasm",
+  "version": "0.2.0",
+  "description": "Thai Citizen ID validation library - WebAssembly build for browsers",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ninyawee/konjingjing.git",
+    "directory": "packages/konjingjing-wasm"
+  },
+  "files": [
+    "konjingjing_wasm_bg.wasm",
+    "konjingjing_wasm.js",
+    "konjingjing_wasm.d.ts"
+  ],
+  "main": "konjingjing_wasm.js",
+  "types": "konjingjing_wasm.d.ts",
+  "keywords": [
+    "thai",
+    "validation",
+    "citizen-id",
+    "thailand",
+    "wasm",
+    "webassembly"
+  ],
+  "author": "Nutchanon Ninyawee <me@nutchanon.org>"
+}

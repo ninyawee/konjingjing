@@ -5,6 +5,28 @@
 
 /** Verify a Thai Citizen Card ID. */
 export declare function verifyId(id: string): boolean
+/** Result of extracting meaning from a Thai National ID. */
+export interface IdMeaning {
+  personTypeCode: number
+  personTypeDescription: string
+  personTypeDescriptionEn: string
+  provinceCode?: number
+  provinceNameTh?: string
+  provinceNameEn?: string
+  amphoeCode?: number
+  amphoeName?: string
+  isValid: boolean
+}
+/**
+ * Extract meaning from a Thai National ID.
+ *
+ * Returns an object with person type, province, amphoe, and validity info.
+ * Returns null if the ID format is invalid.
+ */
+export declare function getIdMeaning(id: string): IdMeaning | null
 
 /** Alias for verifyId (cross-language consistency) */
 export declare function verify_id(id: string): boolean
+
+/** Alias for getIdMeaning (cross-language consistency) */
+export declare function get_id_meaning(id: string): IdMeaning | null

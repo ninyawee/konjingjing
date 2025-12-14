@@ -1,6 +1,6 @@
 [project]
 name = "konjingjing"
-version = "0.2.0"
+version = "1.0.0"
 description = "Thai Citizen ID validation library"
 authors = [{ name = "Nutchanon Ninyawee", email = "me@nutchanon.org" }]
 license = "ISC"
@@ -21,3 +21,4 @@ build-backend = "maturin"
 
 [tool.maturin]
 features = ["pyo3/extension-module", "pyo3/abi3-py39"]
+include = ["konjingjing.pyi", "py.typed"]

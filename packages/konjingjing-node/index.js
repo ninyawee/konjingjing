@@ -310,8 +310,10 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { verifyId } = nativeBinding
+const { verifyId, getIdMeaning } = nativeBinding
 
 module.exports.verifyId = verifyId
-// Snake case alias for cross-language consistency
+module.exports.getIdMeaning = getIdMeaning
+// Snake case aliases for cross-language consistency
 module.exports.verify_id = verifyId
+module.exports.get_id_meaning = getIdMeaning
